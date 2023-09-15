@@ -1,0 +1,28 @@
+train: /media/ps/244e88e1-d2e1-477f-9e37-7b9cb43b842a/LB/code/mmpretrain/data/dog/train  # train images
+val: /media/ps/244e88e1-d2e1-477f-9e37-7b9cb43b842a/LB/code/mmpretrain/data/dog/val  # train images
+
+# Classes
+names:
+  0: n02089867
+  1: n02091244
+  2: n02091831
+  3: n02099601
+  4: n02105505
+  5: n02110063
+  6: n02110341
+  7: n02113712
+
+
+epochs: 100
+batch_size: 4
+world_size: 1
+device: 'cuda:0'
+
+SOLVER:
+  lr: 0.001
+  lrf: 0.1
+  momentum: 0.9
+  weight_decay: 0.005
+
+
+resume: 'weights/resnet50-0676ba61.pth'
