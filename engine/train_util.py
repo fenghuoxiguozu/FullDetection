@@ -44,7 +44,7 @@ def val_one_epoch(model,data_loader,device,epoch):
         val_accurate = acc.item() / nums
         if comm.is_main_process():
             print('[epoch {}] val_accuracy: {:.3f}'.format(epoch+1,val_accurate))
-        torch.save(model.state_dict(), "./weights/model-{}.pth".format(epoch+1))
+        torch.save(model, "./weights/model-{}.pth".format(epoch+1))
 
 
 def reduce_value(value, average=True):

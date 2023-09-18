@@ -14,15 +14,16 @@ names:
 
 
 epochs: 100
-batch_size: 4
+batch_size: 192
 world_size: 1
-device: 'cuda:0'
-
+# device: 'cuda:0'
+BACKBONE: 'build_resnet50_backbone'
+task: detect
 SOLVER:
-  lr: 0.001
+  lr: 0.01
   lrf: 0.1
   momentum: 0.9
   weight_decay: 0.005
 
 
-resume: 'weights/resnet50-0676ba61.pth'
+resume: ''

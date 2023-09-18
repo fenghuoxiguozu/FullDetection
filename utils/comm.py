@@ -44,7 +44,7 @@ def synchronize():
     
 def init_env(rank,cfg,model):
     world_size = get_world_size()
-    dist.init_process_group(backend="NCCL", init_method="tcp://127.0.0.1:25050", world_size=world_size, rank=rank)
+    dist.init_process_group(backend="NCCL", init_method="tcp://127.0.0.1:25052", world_size=world_size, rank=rank)
     torch.cuda.set_device(rank)
     if world_size > 1:
         model = DistributedDataParallel(model, device_ids=[rank], broadcast_buffers=False, find_unused_parameters=True) 

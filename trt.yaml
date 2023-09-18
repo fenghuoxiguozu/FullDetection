@@ -1,0 +1,17 @@
+INPUT_NAME: "data"
+OUTPUT_NAME: "prob"
+DEVICE: 'cuda:0'
+DTYPE: trt.float32
+INPUT_C: 3
+INPUT_H: 224
+INPUT_W: 224
+NUM_CLASSES: 1000
+MAX_BATCH_SIZE: 1
+PT_PATH: "weights/resnet50.pth"
+WTS_PATH: "weights/resnet50.wts"
+ENGINE_PATH: "weights/resnet50.engine"
+BACKBONE: "build_resnet50_trt_backbone" 
+
+EPS: 1e-5
+
+out_channel: 64
